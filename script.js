@@ -150,8 +150,8 @@ function postQuestion() {
     loadQuestionsFromStorage();
 
     var newQuestion = {
-        user: "User Name",
-        initial: "U",
+        user: "Geetansh",
+        initial: "G",
         title: title,
         text: details,
         answers: 0,
@@ -289,8 +289,8 @@ function postAnswer() {
     loadQuestionsFromStorage();
 
     var newAnswer = {
-        user: "User Name",
-        initial: "U",
+        user: "Geetansh",
+        initial: "G",
         text: answerText
     };
 
