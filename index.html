@@ -25,6 +25,15 @@
             <p id="currentTime"></p>
         </div>
 
+        <div class="search-sort-box">
+            <input type="text" id="searchInput" placeholder="Search questions..." onkeyup="searchQuestions()">
+            <div class="sort-buttons">
+                <button onclick="sortQuestions('newest')" class="sort-btn">Newest</button>
+                <button onclick="sortQuestions('answers')" class="sort-btn">Most Answers</button>
+                <button onclick="sortQuestions('likes')" class="sort-btn">Most Likes</button>
+            </div>
+        </div>
+
         <div id="questionsContainer"></div>
     </div>
 
