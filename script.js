@@ -1,70 +1,90 @@
 
 var defaultQuestions = [
     {
-        user: "John Doe",
-        initial: "J",
+        user: "Geetansh",
+        initial: "G",
         title: "What is the best way to learn programming?",
         text: "I am a beginner and want to start learning programming. What language should I start with and what resources would you recommend?",
         answers: 5,
-        likes: 24
+        likes: 24,
+        answersList: [
+            { user: "Sahitya", initial: "S", text: "Start with Python! It has simple syntax and is great for beginners. I recommend using free resources like Codecademy and freeCodeCamp." },
+            { user: "Sidharth", initial: "S", text: "HTML and CSS are good starting points if you want to see immediate results. You can build websites right away!" }
+        ]
     },
     {
-        user: "Sarah Smith",
-        initial: "S",
+        user: "Priya",
+        initial: "P",
         title: "How does photosynthesis work?",
         text: "Can someone explain the process of photosynthesis in simple terms?",
         answers: 3,
-        likes: 15
+        likes: 15,
+        answersList: [
+            { user: "Utsav", initial: "U", text: "Plants use sunlight, water, and carbon dioxide to make food (glucose) and release oxygen. The green color in leaves (chlorophyll) helps capture sunlight!" }
+        ]
     },
     {
-        user: "Mike Johnson",
-        initial: "M",
+        user: "Arjun",
+        initial: "A",
         title: "What are the benefits of reading books?",
         text: "I want to develop a reading habit. What are the main benefits of reading books regularly?",
         answers: 8,
-        likes: 32
+        likes: 32,
+        answersList: []
     },
     {
-        user: "Emma Wilson",
-        initial: "E",
+        user: "Luvya",
+        initial: "L",
         title: "How to make a website responsive?",
         text: "I am learning web development and want to know how to make my website look good on all devices. What are media queries?",
         answers: 6,
-        likes: 18
+        likes: 18,
+        answersList: [
+            { user: "Rohan", initial: "R", text: "Media queries are CSS rules that apply different styles based on screen size. For example, @media (max-width: 768px) applies styles only on screens smaller than 768px." },
+            { user: "Ananya", initial: "A", text: "Start with mobile-first design! Design for small screens first, then add media queries for larger screens." }
+        ]
     },
     {
-        user: "David Brown",
-        initial: "D",
+        user: "Sidharth",
+        initial: "S",
         title: "What is the difference between HTML and CSS?",
         text: "I am confused about HTML and CSS. Can someone explain the difference between them?",
         answers: 4,
-        likes: 11
+        likes: 11,
+        answersList: []
     },
     {
-        user: "Lisa Anderson",
-        initial: "L",
+        user: "Kavya",
+        initial: "K",
         title: "How to stay motivated while studying?",
         text: "I am a student and sometimes I lose motivation. What are some tips to stay focused and motivated?",
         answers: 12,
-        likes: 45
+        likes: 45,
+        answersList: [
+            { user: "Vikram", initial: "V", text: "Set small, achievable goals! Break your study sessions into 25-minute chunks with 5-minute breaks (Pomodoro Technique)." },
+            { user: "Ishita", initial: "I", text: "Find a study buddy or join a study group. Having someone to study with makes it more fun and keeps you accountable." }
+        ]
     },
     {
-        user: "Tom Garcia",
-        initial: "T",
+        user: "Utsav",
+        initial: "U",
         title: "What is JavaScript used for?",
         text: "I keep hearing about JavaScript. What can I do with JavaScript and why is it important?",
         answers: 7,
-        likes: 21
+        likes: 21,
+        answersList: []
     },
     {
-        user: "Rachel Lee",
-        initial: "R",
+        user: "Sahitya",
+        initial: "S",
         title: "How to improve English speaking skills?",
         text: "I want to improve my English speaking. What are the best ways to practice speaking English?",
         answers: 9,
-        likes: 28
+        likes: 28,
+        answersList: []
     }
 ];
+
 
 var questions = [];
 var currentSort = "newest";
@@ -135,7 +155,8 @@ function postQuestion() {
         title: title,
         text: details,
         answers: 0,
-        likes: 0
+        likes: 0,
+        answersList: []
     };
 
     questions.unshift(newQuestion);
@@ -201,7 +222,7 @@ function loadQuestions() {
             '<div class="user-pic">' + q.initial + '</div>' +
             '<div class="user-name">' + q.user + '</div>' +
             '</div>' +
-            '<div class="question-title">' + q.title + '</div>' +
+            '<div class="question-title clickable" onclick="viewQuestion(' + originalIndex + ')">' + q.title + '</div>' +
             '<div class="question-text">' + q.text + '</div>' +
             '<div class="question-actions">' +
             '<span class="answer-count">' + q.answers + ' Answers</span>' +
@@ -210,6 +231,80 @@ function loadQuestions() {
 
         container.appendChild(questionBox);
     }
+}
+
+function viewQuestion(index) {
+    localStorage.setItem("currentQuestionIndex", index);
+    window.location.href = "question-detail.html";
+}
+
+function loadQuestionDetail() {
+    var index = localStorage.getItem("currentQuestionIndex");
+    if (index === null) {
+        window.location.href = "index.html";
+        return;
+    }
+
+    loadQuestionsFromStorage();
+    var q = questions[index];
+
+    document.getElementById("questionUser").textContent = q.user;
+    document.getElementById("questionInitial").textContent = q.initial;
+    document.getElementById("questionTitle").textContent = q.title;
+    document.getElementById("questionText").textContent = q.text;
+    document.getElementById("questionLikes").textContent = q.likes;
+
+    var answersContainer = document.getElementById("answersContainer");
+    answersContainer.innerHTML = "";
+
+    if (!q.answersList) q.answersList = [];
+
+    if (q.answersList.length === 0) {
+        answersContainer.innerHTML = '<div class="no-answers">No answers yet. Be the first to answer!</div>';
+    } else {
+        for (var i = 0; i < q.answersList.length; i++) {
+            var ans = q.answersList[i];
+            var answerDiv = document.createElement("div");
+            answerDiv.className = "answer";
+            answerDiv.innerHTML =
+                '<div class="user-info">' +
+                '<div class="user-pic">' + ans.initial + '</div>' +
+                '<div class="user-name">' + ans.user + '</div>' +
+                '</div>' +
+                '<div class="answer-text">' + ans.text + '</div>';
+            answersContainer.appendChild(answerDiv);
+        }
+    }
+}
+
+function postAnswer() {
+    var answerText = document.getElementById("answerInput").value;
+
+    if (answerText === "" || answerText.length < 10) {
+        showNotification("Please write at least 10 characters!", "error");
+        return;
+    }
+
+    var index = localStorage.getItem("currentQuestionIndex");
+    loadQuestionsFromStorage();
+
+    var newAnswer = {
+        user: "User Name",
+        initial: "U",
+        text: answerText
+    };
+
+    if (!questions[index].answersList) {
+        questions[index].answersList = [];
+    }
+
+    questions[index].answersList.push(newAnswer);
+    questions[index].answers = questions[index].answersList.length;
+    saveQuestionsToStorage();
+
+    showNotification("Answer posted successfully!", "success");
+    document.getElementById("answerInput").value = "";
+    loadQuestionDetail();
 }
 
 

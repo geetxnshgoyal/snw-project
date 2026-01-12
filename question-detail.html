@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Zoura - Question Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">Zoura</div>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="questions.html">Questions</a>
+            <a href="ask.html">Ask Question</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="question-detail">
+            <div class="user-info">
+                <div class="user-pic" id="questionInitial">U</div>
+                <div class="user-name" id="questionUser">User Name</div>
+            </div>
+            <div class="question-title" id="questionTitle">Question Title</div>
+            <div class="question-text" id="questionText">Question text will appear here...</div>
+            <div class="question-stats">
+                <span>👍 <span id="questionLikes">0</span> likes</span>
+            </div>
+        </div>
+
+        <h2>Answers</h2>
+        <div id="answersContainer"></div>
+
+        <h3>Your Answer</h3>
+        <div class="answer-form">
+            <textarea id="answerInput" placeholder="Write your answer here..." rows="6"></textarea>
+            <button class="submit-btn" onclick="postAnswer()">Post Answer</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Zoura 2026 - Share Knowledge</p>
+    </div>
+
+    <script>
+        window.onload = function () {
+            loadQuestionDetail();
+        };
+    </script>
+</body>
+
+</html>

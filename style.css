@@ -64,7 +64,7 @@ body {
     font-size: 18px;
 }
 
-/* Question Box */
+
 .question-box {
     background-color: white;
     padding: 20px;
@@ -115,7 +115,7 @@ body {
     font-weight: bold;
 }
 
-/* Search and Sort */
+
 .search-sort-box {
     background-color: white;
     padding: 20px;
@@ -151,7 +151,7 @@ body {
     color: white;
 }
 
-/* Question Actions */
+
 .question-actions {
     display: flex;
     justify-content: space-between;
@@ -173,14 +173,14 @@ body {
     color: white;
 }
 
-/* Character Counter */
+
 .char-count {
     font-size: 12px;
     color: #666;
     margin-top: 5px;
 }
 
-/* Notification */
+
 .notification {
     position: fixed;
     top: 20px;
@@ -202,7 +202,7 @@ body {
     background-color: #dc3545;
 }
 
-/* No Results */
+
 .no-results {
     text-align: center;
     padding: 40px;
