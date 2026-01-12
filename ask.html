@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Zoura - Ask Question</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">Zoura</div>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="questions.html">Questions</a>
+            <a href="ask.html">Ask Question</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Ask a Question</h1>
+
+        <div class="form-box">
+            <div class="form-group">
+                <label>Question Title</label>
+                <input type="text" id="questionTitle" placeholder="What is your question?">
+            </div>
+
+            <div class="form-group">
+                <label>Question Details</label>
+                <textarea id="questionDetails" placeholder="Provide more details about your question..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Category</label>
+                <select id="questionCategory">
+                    <option>Select Category</option>
+                    <option>Technology</option>
+                    <option>Science</option>
+                    <option>Education</option>
+                    <option>Health</option>
+                    <option>Sports</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <button class="submit-btn" onclick="postQuestion()">Post Question</button>
+        </div>
+
+        <div class="tips-box">
+            <h3>Tips for asking good questions:</h3>
+            <ul>
+                <li>Make your question title clear and specific</li>
+                <li>Provide enough details in the description</li>
+                <li>Check if the question has been asked before</li>
+                <li>Be respectful and polite</li>
+                <li>Choose the right category</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Zoura 2026 - Share Knowledge</p>
+    </div>
+</body>
+
+</html>

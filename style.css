@@ -1,0 +1,497 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+.header {
+    background-color: #b92b27;
+    color: white;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+
+.welcome {
+    background-color: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    color: #b92b27;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #666;
+    font-size: 18px;
+}
+
+/* Question Box */
+.question-box {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-pic {
+    width: 40px;
+    height: 40px;
+    background-color: #b92b27;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.question-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.question-text {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.answer-count {
+    color: #b92b27;
+    font-weight: bold;
+}
+
+
+.question-detail {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.answer {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-top: 20px;
+    border-left: 3px solid #b92b27;
+}
+
+.answer-text {
+    color: #555;
+    line-height: 1.6;
+}
+
+
+.form-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #b92b27;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background-color: #a02622;
+}
+
+/* Tips Box */
+.tips-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.tips-box h3 {
+    color: #b92b27;
+    margin-bottom: 15px;
+}
+
+.tips-box ul {
+    margin-left: 20px;
+}
+
+.tips-box li {
+    color: #666;
+    line-height: 2;
+}
+
+
+.profile-header {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic-large {
+    width: 100px;
+    height: 100px;
+    background-color: #b92b27;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+.profile-info h1 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    color: #666;
+}
+
+
+.stats-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #b92b27;
+}
+
+.stat-label {
+    color: #666;
+    margin-top: 5px;
+}
+
+h2 {
+    color: #333;
+    margin: 30px 0 20px 0;
+}
+
+.answer-box {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.question-title-small {
+    font-size: 16px;
+    font-weight: bold;
+    color: #b92b27;
+    margin-bottom: 10px;
+}
+
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .header {
+        padding: 15px 30px;
+    }
+
+    .question-title {
+        font-size: 19px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+        font-size: 26px;
+    }
+
+    .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .nav a {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 10px;
+        margin: 20px auto;
+        max-width: 95%;
+    }
+
+    .welcome {
+        padding: 25px 20px;
+    }
+
+    .welcome h1 {
+        font-size: 24px;
+    }
+
+    .welcome p {
+        font-size: 16px;
+    }
+
+    .question-box,
+    .question-detail,
+    .form-box,
+    .tips-box {
+        padding: 15px;
+    }
+
+    .question-title {
+        font-size: 18px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .profile-pic-large {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .stats-box {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .stat {
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .stat-number {
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .header {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .container {
+        margin: 15px auto;
+    }
+
+    .welcome {
+        padding: 20px 15px;
+    }
+
+    .welcome h1 {
+        font-size: 22px;
+    }
+
+    .welcome p {
+        font-size: 14px;
+    }
+
+    .question-box,
+    .question-detail,
+    .form-box,
+    .tips-box,
+    .answer-box {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+
+    .question-title {
+        font-size: 17px;
+    }
+
+    .question-text,
+    .answer-text {
+        font-size: 14px;
+    }
+
+    .user-pic {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .user-name {
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .profile-pic-large {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+    }
+
+    .profile-info h1 {
+        font-size: 24px;
+    }
+
+    .stats-box {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .stat-number {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
