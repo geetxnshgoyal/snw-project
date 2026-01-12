@@ -115,6 +115,16 @@ body {
     font-weight: bold;
 }
 
+.answer-count.clickable {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.answer-count.clickable:hover {
+    color: #8a1f1c;
+    text-decoration: underline;
+}
+
 
 .search-sort-box {
     background-color: white;

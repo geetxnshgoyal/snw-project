@@ -5,30 +5,25 @@ var defaultQuestions = [
         initial: "G",
         title: "What is the best way to learn programming?",
         text: "I am a beginner and want to start learning programming. What language should I start with and what resources would you recommend?",
-        answers: 5,
+        answers: 0,
         likes: 24,
-        answersList: [
-            { user: "Sahitya", initial: "S", text: "Start with Python! It has simple syntax and is great for beginners. I recommend using free resources like Codecademy and freeCodeCamp." },
-            { user: "Sidharth", initial: "S", text: "HTML and CSS are good starting points if you want to see immediate results. You can build websites right away!" }
-        ]
+        answersList: []
     },
     {
         user: "Priya",
         initial: "P",
         title: "How does photosynthesis work?",
         text: "Can someone explain the process of photosynthesis in simple terms?",
-        answers: 3,
+        answers: 0,
         likes: 15,
-        answersList: [
-            { user: "Utsav", initial: "U", text: "Plants use sunlight, water, and carbon dioxide to make food (glucose) and release oxygen. The green color in leaves (chlorophyll) helps capture sunlight!" }
-        ]
+        answersList: []
     },
     {
         user: "Arjun",
         initial: "A",
         title: "What are the benefits of reading books?",
         text: "I want to develop a reading habit. What are the main benefits of reading books regularly?",
-        answers: 8,
+        answers: 0,
         likes: 32,
         answersList: []
     },
@@ -37,19 +32,16 @@ var defaultQuestions = [
         initial: "L",
         title: "How to make a website responsive?",
         text: "I am learning web development and want to know how to make my website look good on all devices. What are media queries?",
-        answers: 6,
+        answers: 0,
         likes: 18,
-        answersList: [
-            { user: "Rohan", initial: "R", text: "Media queries are CSS rules that apply different styles based on screen size. For example, @media (max-width: 768px) applies styles only on screens smaller than 768px." },
-            { user: "Ananya", initial: "A", text: "Start with mobile-first design! Design for small screens first, then add media queries for larger screens." }
-        ]
+        answersList: []
     },
     {
         user: "Sidharth",
         initial: "S",
         title: "What is the difference between HTML and CSS?",
         text: "I am confused about HTML and CSS. Can someone explain the difference between them?",
-        answers: 4,
+        answers: 0,
         likes: 11,
         answersList: []
     },
@@ -58,19 +50,16 @@ var defaultQuestions = [
         initial: "K",
         title: "How to stay motivated while studying?",
         text: "I am a student and sometimes I lose motivation. What are some tips to stay focused and motivated?",
-        answers: 12,
+        answers: 0,
         likes: 45,
-        answersList: [
-            { user: "Vikram", initial: "V", text: "Set small, achievable goals! Break your study sessions into 25-minute chunks with 5-minute breaks (Pomodoro Technique)." },
-            { user: "Ishita", initial: "I", text: "Find a study buddy or join a study group. Having someone to study with makes it more fun and keeps you accountable." }
-        ]
+        answersList: []
     },
     {
         user: "Utsav",
         initial: "U",
         title: "What is JavaScript used for?",
         text: "I keep hearing about JavaScript. What can I do with JavaScript and why is it important?",
-        answers: 7,
+        answers: 0,
         likes: 21,
         answersList: []
     },
@@ -79,11 +68,12 @@ var defaultQuestions = [
         initial: "S",
         title: "How to improve English speaking skills?",
         text: "I want to improve my English speaking. What are the best ways to practice speaking English?",
-        answers: 9,
+        answers: 0,
         likes: 28,
         answersList: []
     }
 ];
+
 
 
 var questions = [];
@@ -222,10 +212,10 @@ function loadQuestions() {
             '<div class="user-pic">' + q.initial + '</div>' +
             '<div class="user-name">' + q.user + '</div>' +
             '</div>' +
-            '<div class="question-title clickable" onclick="viewQuestion(' + originalIndex + ')">' + q.title + '</div>' +
+            '<div class="question-title">' + q.title + '</div>' +
             '<div class="question-text">' + q.text + '</div>' +
             '<div class="question-actions">' +
-            '<span class="answer-count">' + q.answers + ' Answers</span>' +
+            '<span class="answer-count clickable" onclick="viewQuestion(' + originalIndex + ')">' + q.answers + ' Answers</span>' +
             '<button class="like-btn" onclick="likeQuestion(' + originalIndex + ')">👍 ' + q.likes + '</button>' +
             '</div>';
 
