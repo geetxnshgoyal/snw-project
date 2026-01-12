@@ -162,7 +162,6 @@ body {
 }
 
 
-/* Question Actions */
 .question-actions {
     display: flex;
     justify-content: space-between;
@@ -262,6 +261,35 @@ body {
     line-height: 1.6;
 }
 
+.answer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.answer-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.no-answers {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+.question-stats {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    color: #666;
+}
+
 
 .form-box {
     background-color: white;
@@ -311,7 +339,7 @@ body {
     background-color: #a02622;
 }
 
-/* Tips Box */
+
 .tips-box {
     background-color: white;
     padding: 25px;
