@@ -162,11 +162,17 @@ body {
 }
 
 
+/* Question Actions */
 .question-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
 }
 
 .like-btn {
@@ -180,6 +186,21 @@ body {
 
 .like-btn:hover {
     background-color: #b92b27;
+    color: white;
+}
+
+.delete-btn {
+    padding: 8px 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #dc3545;
     color: white;
 }
 

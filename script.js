@@ -175,6 +175,15 @@ function likeQuestion(index) {
     loadQuestions();
 }
 
+function deleteQuestion(index) {
+    if (confirm("Are you sure you want to delete this question?")) {
+        questions.splice(index, 1);
+        saveQuestionsToStorage();
+        showNotification("Question deleted successfully!", "success");
+        loadQuestions();
+    }
+}
+
 function loadQuestions() {
     var container = document.getElementById("questionsContainer");
     if (!container) return;
@@ -216,7 +225,10 @@ function loadQuestions() {
             '<div class="question-text">' + q.text + '</div>' +
             '<div class="question-actions">' +
             '<span class="answer-count clickable" onclick="viewQuestion(' + originalIndex + ')">' + q.answers + ' Answers</span>' +
+            '<div class="action-buttons">' +
             '<button class="like-btn" onclick="likeQuestion(' + originalIndex + ')">👍 ' + q.likes + '</button>' +
+            '<button class="delete-btn" onclick="deleteQuestion(' + originalIndex + ')">🗑️ Delete</button>' +
+            '</div>' +
             '</div>';
 
         container.appendChild(questionBox);
