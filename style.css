@@ -8,6 +8,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
 }
+
 .header {
     background-color: #b92b27;
     color: white;
@@ -112,6 +113,101 @@ body {
 .answer-count {
     color: #b92b27;
     font-weight: bold;
+}
+
+/* Search and Sort */
+.search-sort-box {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.sort-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.sort-btn {
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sort-btn:hover {
+    background-color: #b92b27;
+    color: white;
+}
+
+/* Question Actions */
+.question-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.like-btn {
+    padding: 8px 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.like-btn:hover {
+    background-color: #b92b27;
+    color: white;
+}
+
+/* Character Counter */
+.char-count {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.notification.success {
+    background-color: #28a745;
+}
+
+.notification.error {
+    background-color: #dc3545;
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 18px;
 }
 
 
@@ -430,8 +526,17 @@ h2 {
     .form-box,
     .tips-box,
     .answer-box {
-        padding: 12px;
+        padding: 15px;
         margin-bottom: 15px;
+    }
+
+    .sort-buttons {
+        flex-wrap: wrap;
+    }
+
+    .sort-btn {
+        flex: 1;
+        min-width: 100px;
     }
 
     .question-title {

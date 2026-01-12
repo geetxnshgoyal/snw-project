@@ -1,5 +1,5 @@
 
-var questions = [
+var defaultQuestions = [
     {
         user: "John Doe",
         initial: "J",
@@ -66,7 +66,22 @@ var questions = [
     }
 ];
 
+var questions = [];
 var currentSort = "newest";
+
+function loadQuestionsFromStorage() {
+    var stored = localStorage.getItem("zouraQuestions");
+    if (stored) {
+        questions = JSON.parse(stored);
+    } else {
+        questions = defaultQuestions;
+        saveQuestionsToStorage();
+    }
+}
+
+function saveQuestionsToStorage() {
+    localStorage.setItem("zouraQuestions", JSON.stringify(questions));
+}
 
 
 function updateCharCount() {
@@ -112,11 +127,25 @@ function postQuestion() {
         return;
     }
 
-    showNotification("Question posted successfully!", "success");
-    document.getElementById("questionTitle").value = "";
-    document.getElementById("questionDetails").value = "";
-    document.getElementById("questionCategory").value = "Select Category";
-    updateCharCount();
+    loadQuestionsFromStorage();
+
+    var newQuestion = {
+        user: "User Name",
+        initial: "U",
+        title: title,
+        text: details,
+        answers: 0,
+        likes: 0
+    };
+
+    questions.unshift(newQuestion);
+    saveQuestionsToStorage();
+
+    showNotification("Question posted successfully! Redirecting...", "success");
+
+    setTimeout(function () {
+        window.location.href = "index.html";
+    }, 1500);
 }
 
 
@@ -131,6 +160,7 @@ function sortQuestions(sortType) {
 
 function likeQuestion(index) {
     questions[index].likes++;
+    saveQuestionsToStorage();
     loadQuestions();
 }
 
@@ -204,6 +234,7 @@ setInterval(showTime, 1000);
 
 
 window.onload = function () {
+    loadQuestionsFromStorage();
     loadQuestions();
     showTime();
 };
